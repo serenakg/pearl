@@ -14,8 +14,11 @@
     --primary:#D96A42;
     --primary-dark:#B8532F;
     --primary-light:#E8967A;
-    --secondary:#8FADC2;
-    --secondary-dark:#6D8CA3;
+    --secondary:#A3BCCD;
+    --secondary-dark:#7A93A6;
+    --secondary-tint:#D3DDE4;
+    --bright-blue:#4361EE;
+    --bright-blue-dark:#3049C7;
     --cream:#EDEAE4;
     --cream-deep:#DED6C8;
     --teal:#1B343B;
@@ -166,6 +169,14 @@
     background:radial-gradient(circle, rgba(217,106,66,.28) 0%, rgba(217,106,66,0) 70%);
     pointer-events:none;
   }
+  .hero::after{
+    content:'';
+    position:absolute;
+    bottom:-35%;left:-10%;
+    width:480px;height:480px;
+    background:radial-gradient(circle, rgba(67,97,238,.22) 0%, rgba(67,97,238,0) 70%);
+    pointer-events:none;
+  }
   .hero .container{position:relative;z-index:1;max-width:840px;}
   .hero .eyebrow{color:var(--cream);opacity:.85;}
   .hero h1{
@@ -206,7 +217,8 @@
   .for-section h2{color:#fff;}
   .for-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr;
+    max-width:620px;
     gap:32px;
     margin-top:56px;
   }
@@ -226,8 +238,6 @@
     margin-bottom:14px;
     display:block;
   }
-  .for-card--vip{border-color:rgba(143,173,194,.3);}
-  .for-card--vip .tier-label{color:var(--secondary);}
   .for-card h3{color:#fff;font-size:1.5rem;margin-bottom:18px;}
   .for-card .who{color:rgba(255,255,255,.78);font-size:.98rem;margin-bottom:24px;}
   .tension{
@@ -266,8 +276,8 @@
   .pillar-num{
     width:48px;height:48px;
     border-radius:50%;
-    border:1.5px solid var(--primary);
-    color:var(--primary);
+    border:1.5px solid var(--secondary-dark);
+    color:var(--secondary-dark);
     font-family:var(--serif);
     font-size:1.1rem;
     display:flex;align-items:center;justify-content:center;
@@ -278,6 +288,14 @@
 
   /* ---------- Rhythm ---------- */
   .rhythm{background:var(--cream-deep);}
+  .section-tint{background:var(--cream-deep);}
+  .section-intro{
+    font-size:1.05rem;
+    color:rgba(30,22,11,.72);
+    max-width:560px;
+    margin:20px 0 8px;
+    line-height:1.6;
+  }
   .rhythm-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -297,8 +315,8 @@
     font-weight:700;
     letter-spacing:.1em;
     text-transform:uppercase;
-    color:var(--primary);
-    background:rgba(217,106,66,.1);
+    color:var(--secondary-dark);
+    background:var(--secondary-tint);
     padding:6px 14px;
     border-radius:999px;
     margin-bottom:20px;
@@ -451,7 +469,7 @@
     <h1>Where female founders talk real numbers and build real wealth.</h1>
     <p class="sub">For the ambitious female founder who is ready to stop trading time for revenue, clear her operational bottlenecks, and take full control of her personal and business wealth.</p>
     <div class="hero-ctas">
-      <a href="#pricing" class="btn">Reserve Your Seat</a>
+      <a href="#event" class="btn">Reserve Your Seat</a>
       <a href="#join" class="btn btn-outline">Apply to Join</a>
     </div>
   </div>
@@ -467,7 +485,7 @@
 <section class="for-section" id="for">
   <div class="container reveal">
     <p class="eyebrow">Who This Is For</p>
-    <h2>Two rooms. One standard.</h2>
+    <h2>One room. One standard.</h2>
     <div class="for-grid">
       <div class="for-card">
         <span class="tier-label">Core Member</span>
@@ -481,21 +499,6 @@
           <div class="row friction">
             <div class="k">The friction</div>
             <div class="v">She's stuck at an income or operational ceiling. The strategic work stays trapped on the to-do list while she puts out daily fires.</div>
-          </div>
-        </div>
-      </div>
-      <div class="for-card for-card--vip">
-        <span class="tier-label">Invite-Only / VIP Network</span>
-        <h3>The Room She's Already Earned</h3>
-        <p class="who">High-achieving, quietly confident business owners who know their worth and operate at a mature level.</p>
-        <div class="tension">
-          <div class="row">
-            <div class="k">She wants</div>
-            <div class="v">A high-calibre room to bounce ideas off peers, collaborate on joint ventures, and swap strategic leads.</div>
-          </div>
-          <div class="row friction">
-            <div class="k">The friction</div>
-            <div class="v">Most rooms aren't built for where she's at. This one is — by invitation, matched to her level.</div>
           </div>
         </div>
       </div>
@@ -546,14 +549,14 @@
   </div>
 </section>
 
-<section id="pricing">
+<section id="event">
   <div class="container reveal">
-    <p class="eyebrow">Pricing</p>
-    <h2>Join the room</h2>
+    <p class="eyebrow">The Re-Launch</p>
+    <h2>One evening. The room, opened.</h2>
+    <p class="section-intro">Before membership begins, The Pearl Boardroom opens for a single evening in Paphos — meet the founders already in the room, hear how it works, and reserve your place before seats run out.</p>
 
     <div class="pricing-block">
       <div class="pricing-heading">
-        <h3>Re-Launch Event</h3>
         <span class="note">Admission, drinks, nibbles, and a branded gift</span>
       </div>
       <div class="price-grid">
@@ -572,10 +575,17 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="pricing" class="section-tint">
+  <div class="container reveal">
+    <p class="eyebrow">Pricing</p>
+    <h2>Join the room</h2>
 
     <div class="pricing-block">
       <div class="pricing-heading">
-        <h3>Recurring Membership</h3>
+        <h3>Membership</h3>
         <span class="note">Billed monthly, cancel anytime</span>
       </div>
       <div class="price-grid">
