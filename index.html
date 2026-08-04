@@ -208,18 +208,18 @@
   .ticker-pill{
     flex:0 0 auto;
     font-family:var(--sans);
-    font-weight:600;
-    font-size:.82rem;
+    font-weight:700;
+    font-size:.84rem;
     letter-spacing:.03em;
-    color:var(--cream);
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.14);
+    color:#fff;
+    border:1.5px solid transparent;
     border-radius:999px;
-    padding:9px 20px;
+    padding:9px 22px;
     white-space:nowrap;
+    transform:rotate(-2deg);
   }
-  .ticker-pill:nth-child(6n+1){color:var(--ink);background:var(--primary);border-color:var(--primary);}
-  .ticker-pill:nth-child(6n+4){color:var(--ink);background:var(--secondary);border-color:var(--secondary);}
+  .ticker-pill:nth-child(odd){background:var(--primary);border-color:var(--primary-dark);transform:rotate(-2deg);}
+  .ticker-pill:nth-child(even){background:var(--bright-blue);border-color:var(--bright-blue-dark);transform:rotate(2deg);}
   @keyframes ticker-scroll{
     from{transform:translateX(0);}
     to{transform:translateX(-50%);}
