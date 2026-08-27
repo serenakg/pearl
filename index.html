@@ -232,7 +232,11 @@
     border:1px solid rgba(255,255,255,.5);
     border-radius:999px;
     background:rgba(255,255,255,.06);
+    text-decoration:none;
+    cursor:pointer;
+    transition:background .25s ease, border-color .25s ease, transform .2s ease;
   }
+  .save-date:hover{background:rgba(255,255,255,.16);border-color:#fff;transform:translateY(-1px);}
   .save-date-label{
     font-family:var(--sans);
     font-weight:700;
@@ -770,10 +774,10 @@
     <p class="eyebrow">Paphos, Cyprus — Executive Membership</p>
     <h1>Where female founders talk real numbers and build real wealth.</h1>
     <p class="sub">For the ambitious female founder who is ready to stop trading time for revenue, clear her operational bottlenecks, and take full control of her personal and business wealth.</p>
-    <div class="save-date">
+    <a href="#event" class="save-date">
       <span class="save-date-label">Save the Date</span>
       <span class="save-date-day">Launch — 17th September</span>
-    </div>
+    </a>
   </div>
 </section>
 <div class="ticker" aria-label="The Pearl Boardroom, in brief">
