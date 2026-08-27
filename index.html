@@ -224,6 +224,35 @@
   .hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
   .hero-ctas .btn:not(.btn-outline){background:#fff;color:var(--primary);border-color:#fff;}
   .hero-ctas .btn:not(.btn-outline):hover{background:var(--secondary);border-color:var(--secondary);}
+  .save-date{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 28px;
+    border:1px solid rgba(255,255,255,.5);
+    border-radius:999px;
+    background:rgba(255,255,255,.06);
+  }
+  .save-date-label{
+    font-family:var(--sans);
+    font-weight:700;
+    font-size:.72rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--secondary);
+  }
+  .save-date-day{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.05rem;
+    color:#fff;
+    padding-left:12px;
+    border-left:1px solid rgba(255,255,255,.35);
+  }
+  @media (max-width:480px){
+    .save-date{flex-direction:column;gap:4px;padding:16px 24px;text-align:center;}
+    .save-date-day{border-left:none;padding-left:0;}
+  }
 
   /* ---------- Ticker ---------- */
   .ticker{
@@ -425,6 +454,7 @@
     display:flex;
     gap:18px;
     flex-wrap:wrap;
+    justify-content:center;
   }
   .founder-link{
     font-size:.84rem;
@@ -564,12 +594,52 @@
   }
 
   /* ---------- Event ---------- */
-  #event{background:var(--cream-deep);}
+  #event{background:linear-gradient(160deg, var(--cream-deep) 0%, var(--secondary-tint) 60%, var(--secondary) 130%);position:relative;overflow:hidden;}
+  #event::before{
+    content:"";
+    position:absolute;
+    top:-120px; right:-120px;
+    width:360px; height:360px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(83,160,199,.35) 0%, rgba(83,160,199,0) 70%);
+    pointer-events:none;
+  }
+  #event .container{position:relative;z-index:1;}
   #event h2{font-size:clamp(1.9rem, 4vw, 2.7rem);text-wrap:balance;}
   #event .section-intro{color:rgba(10,43,75,.75);}
   #event .pricing-heading .note{color:rgba(10,43,75,.6);}
   #event .price-card.featured{border-color:var(--secondary-dark);box-shadow:0 16px 40px rgba(193,219,232,.35);}
   #event .price-card.featured .badge{background:var(--secondary-dark);}
+  .event-meta{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    margin:32px 0 40px;
+  }
+  .event-meta-item{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    background:#fff;
+    border-left:3px solid var(--secondary-dark);
+    border-radius:10px;
+    padding:14px 22px;
+    box-shadow:0 8px 24px rgba(13,59,102,.08);
+  }
+  .event-meta-label{
+    font-family:var(--sans);
+    font-weight:700;
+    font-size:.68rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--secondary-dark);
+  }
+  .event-meta-value{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1rem;
+    color:var(--ink);
+  }
   .event-cta{text-align:center;margin-top:36px;}
   .coming-soon{
     text-align:center;
@@ -633,6 +703,13 @@
     font-weight:700;
   }
   footer .foot-col p{font-size:.94rem;color:rgba(255,255,255,.82);}
+  .footer-contact-link{
+    display:inline-block;
+    font-size:.94rem;
+    font-weight:600;
+    color:rgba(255,255,255,.82);
+  }
+  .footer-contact-link:hover{color:var(--secondary);}
   .footer-bottom{
     padding-top:24px;
     font-size:.82rem;
@@ -684,7 +761,6 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#pillars">Pillars</a></li>
       <li><a href="#membership">Membership</a></li>
-      <li><a href="#pricing">Pricing</a></li>
       <li><a href="#join">Join</a></li>
     </ul>
   </nav>
@@ -694,9 +770,9 @@
     <p class="eyebrow">Paphos, Cyprus — Executive Membership</p>
     <h1>Where female founders talk real numbers and build real wealth.</h1>
     <p class="sub">For the ambitious female founder who is ready to stop trading time for revenue, clear her operational bottlenecks, and take full control of her personal and business wealth.</p>
-    <div class="hero-ctas">
-      <a href="#event" class="btn">Reserve Your Seat</a>
-      <a href="#join" class="btn btn-outline">Apply to Join</a>
+    <div class="save-date">
+      <span class="save-date-label">Save the Date</span>
+      <span class="save-date-day">Launch — 17th September</span>
     </div>
   </div>
 </section>
@@ -752,6 +828,49 @@
   <div class="container">
     <p class="eyebrow">Our Mission</p>
     <blockquote class="pull">Our mission is to dismantle the systemic gaps in women's financial education by equipping female founders with the tools, systems, and confidence to build high-margin businesses and undeniable long-term wealth.</blockquote>
+  </div>
+</section>
+
+<section id="event">
+  <div class="container reveal">
+    <p class="eyebrow">The Re-Launch</p>
+    <h2>Unlocking Wealth: The Pearl Boardroom Launch Event</h2>
+    <p class="section-intro">Before membership begins, The Pearl Boardroom opens for a single evening in Paphos — meet the founders already in the room, hear how it works, and reserve your place before seats run out.</p>
+
+    <div class="event-meta">
+      <div class="event-meta-item">
+        <span class="event-meta-label">When</span>
+        <span class="event-meta-value">Thursday 17 September 2026, 18:00 – 21:30</span>
+      </div>
+      <div class="event-meta-item">
+        <span class="event-meta-label">Where</span>
+        <span class="event-meta-value">Art by the Sea, Chlorakas, Paphos 8220</span>
+      </div>
+    </div>
+
+    <div class="pricing-block">
+      <div class="pricing-heading">
+        <span class="note">Admission, drinks, nibbles, and a branded gift</span>
+      </div>
+      <div class="price-grid">
+        <div class="price-card featured">
+          <span class="badge">Early Bird</span>
+          <div class="tier-name">Early Bird Ticket</div>
+          <div class="amount">€25<sup>+VAT</sup></div>
+          <div class="vat">Per ticket</div>
+          <p class="desc">For those who reserve early. Same room, same evening, quieter price.</p>
+        </div>
+        <div class="price-card">
+          <div class="tier-name">Standard Ticket</div>
+          <div class="amount">€35<sup>+VAT</sup></div>
+          <div class="vat">Per ticket</div>
+          <p class="desc">Full admission to the re-launch evening, at the door rate.</p>
+        </div>
+      </div>
+      <div class="event-cta">
+        <a href="https://buytickets.at/thepearlboardroom/2369560/share/9f7288264e5df223283348bc84ecef84" target="_blank" rel="noopener" class="btn">Buy Tickets</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -859,7 +978,7 @@
   </div>
 </section>
 
-<section id="pricing">
+<section id="pricing" style="display:none;">
   <div class="container reveal">
     <p class="eyebrow">Pricing</p>
     <h2>Join the room</h2>
@@ -890,43 +1009,12 @@
   </div>
 </section>
 
-<section id="event">
-  <div class="container reveal">
-    <p class="eyebrow">The Re-Launch</p>
-    <h2>One evening. The room, opened.</h2>
-    <p class="section-intro">Before membership begins, The Pearl Boardroom opens for a single evening in Paphos — meet the founders already in the room, hear how it works, and reserve your place before seats run out.</p>
-
-    <div class="pricing-block">
-      <div class="pricing-heading">
-        <span class="note">Admission, drinks, nibbles, and a branded gift</span>
-      </div>
-      <div class="price-grid">
-        <div class="price-card featured">
-          <span class="badge">Early Bird</span>
-          <div class="tier-name">Early Bird Ticket</div>
-          <div class="amount">€25<sup>+VAT</sup></div>
-          <div class="vat">Per ticket</div>
-          <p class="desc">For those who reserve early. Same room, same evening, quieter price.</p>
-        </div>
-        <div class="price-card">
-          <div class="tier-name">Standard Ticket</div>
-          <div class="amount">€35<sup>+VAT</sup></div>
-          <div class="vat">Per ticket</div>
-          <p class="desc">Full admission to the re-launch evening, at the door rate.</p>
-        </div>
-      </div>
-      <div class="event-cta">
-        <a href="https://buytickets.at/thepearlboardroom/2369560/share/9f7288264e5df223283348bc84ecef84" target="_blank" rel="noopener" class="btn">Buy Tickets</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="final-cta" id="join">
   <div class="container reveal">
     <h2>Stop trading time for revenue.</h2>
     <p>The Pearl Boardroom gives you the numbers, the systems, and the room to build wealth that outlasts the hustle.</p>
-    <a href="mailto:hello@thepearlboardroom.com" class="btn">Apply to Join</a>
+    <a href="mailto:hello@serenagasparini.com" class="btn">Apply to Join</a>
   </div>
 </section>
 
@@ -942,7 +1030,11 @@
       </div>
       <div class="foot-col">
         <h4>Contact</h4>
-        <p>hello@thepearlboardroom.com</p>
+        <a href="mailto:anastasia@anastria.com,hello@serenagasparini.com" class="footer-contact-link">Contact Us ↗</a>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <a href="https://www.instagram.com/thepearlboardroom/" target="_blank" rel="noopener" class="footer-contact-link">Instagram ↗</a>
       </div>
     </div>
     <div class="footer-bottom">
