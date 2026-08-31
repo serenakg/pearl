@@ -541,6 +541,47 @@
     font-style:italic;
   }
 
+  /* ---------- Community (WhatsApp) ---------- */
+  #community .section-intro{max-width:640px;}
+  .community-card{
+    margin-top:40px;
+    background:var(--teal-deep);
+    border-radius:20px;
+    padding:40px 44px;
+    display:flex;
+    align-items:center;
+    gap:28px;
+    flex-wrap:wrap;
+  }
+  .community-card-icon{
+    flex-shrink:0;
+    width:60px;height:60px;
+    border-radius:50%;
+    background:rgba(255,255,255,.1);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .community-card-text{flex:1 1 320px;}
+  .community-card-label{
+    font-family:var(--sans);
+    font-weight:700;
+    font-size:.72rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--secondary);
+    margin-bottom:8px;
+  }
+  .community-card-text p{
+    color:rgba(255,255,255,.78);
+    font-size:.96rem;
+    line-height:1.6;
+  }
+  .community-card .btn{flex-shrink:0;background:#fff;color:var(--primary);border-color:#fff;}
+  .community-card .btn:hover{background:var(--secondary);border-color:var(--secondary);}
+  @media (max-width:700px){
+    .community-card{flex-direction:column;text-align:center;padding:36px 28px;}
+    .community-card .btn{width:100%;}
+  }
+
   /* ---------- Pricing ---------- */
   .pricing-block{margin-top:40px;}
   .pricing-block + .pricing-block{margin-top:72px;}
@@ -810,6 +851,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#pillars">Pillars</a></li>
       <li><a href="#membership">Membership</a></li>
+      <li><a href="#community">Community</a></li>
       <li><a href="#join">Join</a></li>
     </ul>
   </nav>
@@ -1058,6 +1100,24 @@
   </div>
 </section>
 
+
+<section id="community">
+  <div class="container reveal">
+    <p class="eyebrow">Join Us</p>
+    <h2>Join the free community</h2>
+    <p class="section-intro">Not ready for membership yet? Join our free WhatsApp community for female founders — real conversations, real support, no cost, no catch.</p>
+    <div class="community-card">
+      <div class="community-card-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21L4.6 16.6C3.6 15 3 13.1 3 11C3 5.5 7.5 1 13 1C18.5 1 23 5.5 23 11C23 16.5 18.5 21 13 21C11.1 21 9.3 20.5 7.8 19.6L3 21Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 8.5C8.5 12.5 11.5 15.5 15.5 15.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </div>
+      <div class="community-card-text">
+        <div class="community-card-label">Free · WhatsApp Community</div>
+        <p>Connect with other ambitious female founders, get first access to events like the launch evening, and be part of the conversation before you join the room.</p>
+      </div>
+      <a href="https://chat.whatsapp.com/DAt2zCpcrfaD3Al4G9QeJR" target="_blank" rel="noopener" class="btn">Join on WhatsApp</a>
+    </div>
+  </div>
+</section>
 
 <section class="final-cta" id="join">
   <div class="container reveal">
