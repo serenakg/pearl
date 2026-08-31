@@ -721,7 +721,52 @@
     display:flex;
     justify-content:space-between;
     flex-wrap:wrap;
-    gap:8px;
+    gap:8px 20px;
+  }
+  .footer-legal-links a{
+    color:rgba(255,255,255,.45);
+    text-decoration:none;
+    margin-right:20px;
+  }
+  .footer-legal-links a:hover{color:rgba(255,255,255,.8);}
+
+  /* ---------- Cookie banner ---------- */
+  .cookie-banner{
+    position:fixed;
+    left:0; right:0; bottom:0;
+    z-index:200;
+    background:var(--ink);
+    border-top:1px solid rgba(255,255,255,.12);
+    box-shadow:0 -8px 30px rgba(5,22,39,.35);
+    padding:18px 20px;
+    transform:translateY(110%);
+    transition:transform .4s ease;
+  }
+  .cookie-banner.is-visible{transform:translateY(0);}
+  .cookie-banner-inner{
+    max-width:1080px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .cookie-banner p{
+    margin:0;
+    font-size:.88rem;
+    color:rgba(255,255,255,.82);
+    max-width:640px;
+  }
+  .cookie-banner a{color:var(--secondary);}
+  .cookie-banner-actions{display:flex;gap:12px;flex-shrink:0;}
+  .cookie-banner .btn{padding:10px 22px;font-size:.86rem;}
+  .cookie-banner .btn-teal{border-color:rgba(255,255,255,.4);color:#fff;}
+  .cookie-banner .btn-teal:hover{background:rgba(255,255,255,.1);}
+  @media (max-width:600px){
+    .cookie-banner-inner{flex-direction:column;align-items:flex-start;}
+    .cookie-banner-actions{width:100%;}
+    .cookie-banner-actions .btn{flex:1;}
   }
 
   /* ---------- Responsive ---------- */
@@ -1043,10 +1088,21 @@
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 The Pearl Boardroom</span>
+      <span class="footer-legal-links"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-and-conditions.html">Terms &amp; Conditions</a></span>
       <span>Est. Paphos</span>
     </div>
   </div>
 </footer>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+  <div class="cookie-banner-inner">
+    <p>We use cookies to run this site and improve your experience. See our <a href="/privacy-policy.html#cookies">Cookies Policy</a> for details.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="btn btn-teal cookie-decline" id="cookieDecline">Decline</button>
+      <button type="button" class="btn cookie-accept" id="cookieAccept">Accept</button>
+    </div>
+  </div>
+</div>
 
 <script>
   // Respect reduced-motion: pause the intro video, show the poster frame
@@ -1067,6 +1123,19 @@
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Cookie consent banner
+  const cookieBanner = document.getElementById('cookieBanner');
+  const cookieChoice = localStorage.getItem('pearlCookieConsent');
+  if (!cookieChoice) {
+    requestAnimationFrame(() => cookieBanner.classList.add('is-visible'));
+  }
+  const setCookieChoice = (value) => {
+    localStorage.setItem('pearlCookieConsent', value);
+    cookieBanner.classList.remove('is-visible');
+  };
+  document.getElementById('cookieAccept').addEventListener('click', () => setCookieChoice('accepted'));
+  document.getElementById('cookieDecline').addEventListener('click', () => setCookieChoice('declined'));
 
   // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
