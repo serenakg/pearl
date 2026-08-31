@@ -541,9 +541,9 @@
     font-style:italic;
   }
 
-  /* ---------- Community (WhatsApp) ---------- */
-  #community .section-intro{max-width:640px;}
-  .community-card{
+  /* ---------- Community (WhatsApp) / Sponsor CTA cards ---------- */
+  #community .section-intro, #sponsor .section-intro{max-width:640px;}
+  .community-card, .sponsor-card{
     margin-top:40px;
     background:var(--teal-deep);
     border-radius:20px;
@@ -553,15 +553,15 @@
     gap:28px;
     flex-wrap:wrap;
   }
-  .community-card-icon{
+  .community-card-icon, .sponsor-card-icon{
     flex-shrink:0;
     width:60px;height:60px;
     border-radius:50%;
     background:rgba(255,255,255,.1);
     display:flex;align-items:center;justify-content:center;
   }
-  .community-card-text{flex:1 1 320px;}
-  .community-card-label{
+  .community-card-text, .sponsor-card-text{flex:1 1 320px;}
+  .community-card-label, .sponsor-card-label{
     font-family:var(--sans);
     font-weight:700;
     font-size:.72rem;
@@ -570,16 +570,16 @@
     color:var(--secondary);
     margin-bottom:8px;
   }
-  .community-card-text p{
+  .community-card-text p, .sponsor-card-text p{
     color:rgba(255,255,255,.78);
     font-size:.96rem;
     line-height:1.6;
   }
-  .community-card .btn{flex-shrink:0;background:#fff;color:var(--primary);border-color:#fff;}
-  .community-card .btn:hover{background:var(--secondary);border-color:var(--secondary);}
+  .community-card .btn, .sponsor-card .btn{flex-shrink:0;background:#fff;color:var(--primary);border-color:#fff;}
+  .community-card .btn:hover, .sponsor-card .btn:hover{background:var(--secondary);border-color:var(--secondary);}
   @media (max-width:700px){
-    .community-card{flex-direction:column;text-align:center;padding:36px 28px;}
-    .community-card .btn{width:100%;}
+    .community-card, .sponsor-card{flex-direction:column;text-align:center;padding:36px 28px;}
+    .community-card .btn, .sponsor-card .btn{width:100%;}
   }
 
   /* ---------- Pricing ---------- */
@@ -961,6 +961,24 @@
       <div class="event-cta">
         <a href="https://buytickets.at/thepearlboardroom/2369560/share/9f7288264e5df223283348bc84ecef84" target="_blank" rel="noopener" class="btn">Buy Tickets</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="sponsor">
+  <div class="container reveal">
+    <p class="eyebrow">Partner With Us</p>
+    <h2>Become a sponsor</h2>
+    <p class="section-intro">Put your brand in front of a room of ambitious female founders. Sponsorship packages are available for the launch event and beyond.</p>
+    <div class="sponsor-card">
+      <div class="sponsor-card-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 8.5L21 9.3L16.2 13.8L17.6 20.5L12 17L6.4 20.5L7.8 13.8L3 9.3L9.6 8.5L12 2Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="sponsor-card-text">
+        <div class="sponsor-card-label">Sponsorship Enquiries</div>
+        <p>From the launch evening to ongoing membership events, partner with The Pearl Boardroom to reach a curated room of founders and decision-makers.</p>
+      </div>
+      <a href="https://canva.link/pearlboardroom-sponsor" target="_blank" rel="noopener" class="btn">Become a Sponsor</a>
     </div>
   </div>
 </section>
