@@ -591,9 +591,18 @@
   }
   .price-grid-single{
     grid-template-columns:1fr;
-    max-width:420px;
-    margin:0 auto;
+    max-width:100%;
   }
+  .price-grid-single .price-card{
+    padding:48px 56px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:48px;
+  }
+  .price-grid-single .price-card > .price-card-copy{flex:1;}
+  .price-grid-single .price-card .desc{max-width:520px;}
+  .price-grid-single .price-card-btn{width:auto;padding-left:40px;padding-right:40px;flex-shrink:0;}
   .price-card{
     background:#fff;
     border:1px solid rgba(13,59,102,.1);
@@ -741,6 +750,8 @@
     .for-card{grid-template-columns:1fr;gap:24px;}
     .tension{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,.14);padding-top:20px;}
     .founders-grid{grid-template-columns:1fr;max-width:380px;gap:36px;}
+    .price-grid-single .price-card{flex-direction:column;align-items:stretch;text-align:left;padding:34px 32px;gap:0;}
+    .price-grid-single .price-card-btn{width:100%;margin-top:8px;}
   }
 
   @media (max-width:640px){
@@ -906,10 +917,12 @@
       <div class="price-grid price-grid-single">
         <div class="price-card featured">
           <span class="badge">Founding Rate</span>
-          <div class="tier-name">Founding Member</div>
-          <div class="amount">€49<sup>+VAT</sup></div>
-          <div class="vat">Per year, locked in</div>
-          <p class="desc">Offered only to the founding cohort who join before the room fills. This rate isn't repeated once membership opens standard.</p>
+          <div class="price-card-copy">
+            <div class="tier-name">Founding Member</div>
+            <div class="amount">€49<sup>+VAT</sup></div>
+            <div class="vat">Per year, locked in</div>
+            <p class="desc">Offered only to the founding cohort who join before the room fills. This rate isn't repeated once membership opens standard.</p>
+          </div>
           <a href="https://buy.stripe.com/4gM00i8b3ab74aL3sucZa05" target="_blank" rel="noopener" class="btn price-card-btn">Join as a Founding Member</a>
         </div>
       </div>
